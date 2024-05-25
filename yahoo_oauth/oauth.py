@@ -102,7 +102,7 @@ class BaseOAuth(object):
             self.session = self.oauth.get_session(token=self.access_token)
 
         if self.store_file:
-            write_data(data, vars(self).get('from_file', 'secrets.json'))
+            write_data(data, vars(self).get('from_file', '/tmp/secrets.json'))
 
     def handler(self,):
         """* get request token if OAuth1
